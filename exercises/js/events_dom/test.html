@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function init(){
+            processForm();
+        }
+        function processForm() {
+            let delivery = document.getElementsByName("delivery");
+            for (let i = 0; i < delivery.length; i++) {
+                console.log("[" + (delivery[i].checked ? "X" : " ") + "] "
+                + delivery[i].value);
+            }
+        }
+        window.onload = init()
+       </script>
+</head>
+<body>
+    <label>Delivery
+        <input type="radio" name="delivery" value="normal">Normal
+        <input type="radio" name="delivery" value="extra">Extra
+        <input type="radio" name="delivery" value="hyper">Hyper
+       </label>
+</body>
+</html>

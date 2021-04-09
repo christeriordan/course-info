@@ -11,6 +11,7 @@
     <title>Vue Exercise 1</title>
     <style>
         .counter {
+            position: relative;
             border: 1px solid gray;
             padding: 10px;
         }
@@ -27,14 +28,19 @@
         .even {
             background-color: lightgray;
         }
+        .message {
+            position: absolute;
+            right: 10px;
+        }
     </style>
 </head>
 <body>
     <div id="app">
-        <div class="counter_container">
+        <div class="counter_container" :class="{even: grey}">
             <div class="counter">
-                <span id="count" class="count">0</span>
-                <button>Add</button>
+                <span id="count" class="count">{{count}}</span>
+                <button v-on:click="test">Add</button>
+                <span class="message">{{message}}</span>
             </div>
         </div>
     </div>
@@ -43,10 +49,23 @@
         Vue.createApp({
             data: function(){ 
                 return {
-                    count: 0
+                    count: 0,
+                    grey: false,
+                    message: "odd"
                 }
             },
             methods: {
+                test: function(){
+                    this.count += 1
+                    if (this.count %2 === 0){
+                        this.grey = true
+                        this.message = "even"
+                    }else{
+                        this.grey = false
+                        this.message = "odd"
+                    }
+                },
+
             }
         }).mount("#app");
     </script>

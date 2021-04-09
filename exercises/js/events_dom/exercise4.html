@@ -14,6 +14,49 @@
             font-size: 12pt;
         }
     </style>
+    <script>
+        function font(){
+            let text = document.getElementById("text");
+            let resize = document.getElementById("font_size");
+            let fontFam = document.getElementById("font_family");
+
+            text.style.fontSize = resize.value;
+            /*text.style.fontSize = resize.options[resize.selectedIndex].value*/
+            text.style.fontFamily = fontFam.options[fontFam.selectedIndex].value
+        }
+        function italic(){
+            let i = document.getElementById("font_italic").checked;
+            let text = document.getElementById("text");
+
+            text.style.fontStyle = (i ? "italic" : "normal");
+
+        }
+        function bold(){
+            let bold = document.getElementById("font_bold").checked;
+            let text = document.getElementById("text");
+
+            if (bold === true) {
+                text.style.fontWeight = "bold"
+            }else{
+                text.style.fontWeight = "normal"
+            }
+        }
+        function underline() {
+            let underline = document.getElementById("font_underline").checked;
+            let text = document.getElementById("text");
+
+            if (underline === true){
+                text.style.textDecoration = "underline"
+            }else{
+                text.style.textDecoration = "none"
+            }
+        }
+
+        function init(){
+            onchange = font;
+        }
+        window.onload = init;
+    </script>
 </head>
 <body>
 <form name="form">
@@ -31,9 +74,9 @@
         <option value="14pt">14pt</option>
         <option value="16pt">16pt</option>
     </select>
-    <label>Italic <input type="checkbox" name="font_italic" id="font_italic"></label>
-    <label>Bold <input type="checkbox" name="font_bold" id="font_bold"></label>
-    <label>Underline <input type="checkbox" name="font_underline" id="font_underline"></label>
+    <label>Italic <input type="checkbox" name="font_italic" id="font_italic" onchange="italic();"></label>
+    <label>Bold <input type="checkbox" name="font_bold" id="font_bold" onchange="bold();"></label>
+    <label>Underline <input type="checkbox" name="font_underline" id="font_underline" onchange="underline();"></label>
 </form>
 
 <div id="text">The quick brown fox jumps over the lazy dog</div>

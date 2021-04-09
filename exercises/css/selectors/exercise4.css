@@ -1,1 +1,20 @@
 /* this is for you to complete */
+ul ul li {
+    color: blue;
+}
+ul ul ul li {
+    list-style-type: none;
+}
+ul::first-line {
+    font-weight: bold;
+}
+ul a {
+    color: red;
+}
+a {
+    color: green;
+}
+div + div a {
+    color: purple;
+    background-color: yellow;
+}

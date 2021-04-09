@@ -10,14 +10,16 @@
         "use strict";
 
         // Code for testing the BankAccount class
-        let myAccount = new BankAccount("MyName", 1000);
+        let myAccount = new BankAccount("Christer", 1000);
         console.log(myAccount.balance);
+        console.log(myAccount.name)
         myAccount.deposit(500);
         console.log(myAccount.balance);
         myAccount.withdraw(2000);
         console.log(myAccount.balance);
         myAccount.withdraw(1000);
         console.log(myAccount.balance);
+
     </script>
 </body>
 </html>

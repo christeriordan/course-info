@@ -1,6 +1,5 @@
 """
 Simple HTTP server.
-
 https://docs.python.org/3/library/http.server.html
 """
 from urllib.parse import urlparse, parse_qsl
@@ -9,7 +8,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 class myHTTPServer_RequestHandler(BaseHTTPRequestHandler):
     """
     HTTPRequestHandler class
-
     Parsing of the request is done by the base class BaseHTTPRequestHandler.
     """
 
@@ -22,7 +20,7 @@ class myHTTPServer_RequestHandler(BaseHTTPRequestHandler):
         self.send_header('Content-type', 'text/html')
         self.end_headers()
 
-        
+
         parsed = urlparse(self.path)
         x = parse_qsl(parsed.query)
 

@@ -7,5 +7,14 @@
 
 {# TODO: list the numbers here #}
 
+{% for i in numbers %}
+{{ "<strong>"|safe if i }}{{ loop.index }} {{ "</strong>"|safe if i }}{{ "," if not loop.last }}
+{% endfor %}
+
+
+{% for i in var %}
+{{loop.cycle}}
+{% endfor %}
+
 </body>
 </html>

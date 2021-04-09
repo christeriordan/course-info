@@ -15,6 +15,46 @@
     </style>
     <script>
         /* TODO complete this part */
+        function error(){
+            err = document.getElementById("pw1_check");
+            err2 = document.getElementById("pw2_check")
+            pw1 = document.getElementById("password1").value;
+            pw2 = document.getElementById("password2").value;
+            
+            let isError = false;
+            if (pw1.length > 0){
+                if (pw1.length < 6){
+                    err.innerHTML = "To short"
+                    isError = true;
+                }else{
+                    err.innerHTML = ""
+                }
+                if (pw2.length > 0 && pw1 !== pw2){
+                    err2.innerHTML = "Passwords dont match"
+                    isError = true;
+                }else{
+                    err2.innerHTML = ""
+                }
+            }else{
+                err.innerHTML = ""
+            }
+
+            let div = document.getElementById("submitBtn");
+            if (isError === false){
+                div.hidden = false
+            }else{
+                div.hidden = true
+            }
+            
+            
+
+        }
+        function init(){
+            onkeydown = error;
+            
+            
+        }
+        window.onload = init;
     </script>
 </head>
 <body>

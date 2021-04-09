@@ -1,0 +1,77 @@
+/* ------ Font imports ------ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+/* ------ General ------ */
+body {
+    font-family: Raleway,sans-serif;
+    font-size: relative;
+    background-color: white;
+
+
+}
+html, body{
+    min-height: 100%;
+    margin: 0px;
+    
+}
+#wrapper {
+    width: 80%;
+    margin: auto;
+    max-width: 960px;
+}
+.flex {
+    display: flex;
+    flex-direction: row-reverse;
+}
+h1,h2,h3,h4 {
+    font-family: Montserrat,sans-serif;
+}
+
+/* ------ Header ------ */
+header {
+    
+    background-color: teal;
+    height: 40px;   
+}
+
+#logo {
+    background-color: thistle;
+    height: 60px;
+    position: absolute;
+    left: 5%;
+    z-index: 1; 
+}
+
+nav .navbar {
+    flex: 200px;
+    padding-top: 20px;
+    background-color: #e3e3e3;
+}
+#icons{
+    color: white;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100px ;
+}
+
+/* ------ Main ------ */
+
+main {
+    flex: 100%;
+    padding-top: 20px;
+    background-color: white;
+}
+
+/* ------ Footer ------*/
+
+footer{
+    position: absolute;
+    height: 120px;
+    border: 1px solid black;
+    width: 100%;
+    background-color: tomato;
+    
+}
+

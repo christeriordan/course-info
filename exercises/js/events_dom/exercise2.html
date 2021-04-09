@@ -12,6 +12,39 @@
     </style>
     <script>
         /* TODO: write JS code here */
+        colors = ["red", "green", "blue", "pink", "black", "white"];
+
+       /* function changeColor(){
+            let mydiv = document.getElementById("mydiv");
+            if (mydiv.style.backgroundColor === "blue"){
+                mydiv.style.backgroundColor = "red";
+            }else if (mydiv.style.backgroundColor === "red") {
+                mydiv.style.backgroundColor = "green";
+            }else {
+                mydiv.style.backgroundColor = "blue";
+            }
+        }*/
+
+        function testfunc(){
+            let color = this.style.backgroundColor;
+            let index = colors.indexOf(color); 
+            index+=1;
+            if (index === colors.length){
+                index = 0;
+            }
+            this.style.backgroundColor = colors[index]    
+        }
+
+        function init(){
+            
+            let mydiv = document.getElementById("mydiv");
+            let rnd = Math.floor(Math.random() * colors.length)
+            mydiv.style.backgroundColor = colors[rnd];
+            mydiv.onclick = testfunc;
+            /*mydiv.onclick = changeColor;*/
+}
+        window.onload = init;
+        
     </script>
 </head>
 <body>

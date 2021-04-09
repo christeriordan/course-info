@@ -1,6 +1,7 @@
 from my_encode import string_to_bytes, encode, bytes_to_string
 from my_decode import decode
 
+
 my_string = "String to be encoded!"
 
 def main():

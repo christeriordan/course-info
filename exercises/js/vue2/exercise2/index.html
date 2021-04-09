@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Import Vue -->
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.js"></script>
+    
+    <script src="src/songlistitem.js"></script>
+    <script src="src/addsong.js"></script>
+
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Vue list</title>
+</head>
+<body>
+<div id="app">
+<add-song 
+    v-on:new-song="addSong($event)"
+></add-song>
+    <ul id="playlist">
+        <song-list-item 
+        v-for="(song, index) in playlist"
+        v-bind:song="song"
+        v-bind:key="index"
+        v-on:delete="remove(index)">
+
+        </song-list-item>
+    </ul>
+
+
+</div>
+
+</body>
+</html>

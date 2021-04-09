@@ -6,6 +6,23 @@
     <link rel="stylesheet" href="exercise3.css">
     <script>
         /* TODO this is for you to complete */
+        
+        function addSong(){
+
+            let list = document.getElementById("playlist");
+            let input = document.getElementById("songTextInput").value;
+            let listElement = document.createElement("li");
+            if (input === ""){
+
+            }else{
+                listElement.innerHTML = input;
+                list.appendChild(listElement);
+            }
+        }
+        window.onload = function(){
+            document.getElementById("addButton").onclick = addSong;
+        }
+
     </script>
 </head>
 <body>

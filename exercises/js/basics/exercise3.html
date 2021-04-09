@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gcd(a,b) {
+            while (b != 0){
+                let t = b;
+                b = a % b;
+                a = t;
+            }
+            return a
+        }
+
+
+        let a = prompt("Type in a numeric value for a")
+        while (a <= 0 || isNaN(a)){
+            alert("Your answer needs to be greater than 0! and it can only contain integers");
+            let new_a = prompt("Try again");
+            a = new_a;
+        }
+        let b = prompt("type in a numeric value for b");
+        while (b <= 0 || isNaN(b)){
+            alert("Your answer needs to be greater than 0! and it can only contain integers");
+            let new_b = prompt("Try again.");
+            b = new_b;
+        }
+        document.write("The greatest common divisor of " + "<strong>"
+             + a + "</strong>" + " and " + "<strong>" 
+             + b + "</strong>" 
+             + " is " + "<strong>" 
+             +  gcd(a,b)) + "</strong>"
+        
+    </script>
+</body>
+</html>

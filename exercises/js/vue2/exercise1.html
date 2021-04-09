@@ -49,19 +49,21 @@
 <div id="app">
     <div class="container">
         <label for="backcolor">Select a background color:
-        <input type="color" id="backcolor"></label>
+        <input type="color" id="backcolor" v-model="colorVal"></label>
         <div class="box">
             <div>Select an icon</div>
-            <button><i class="fa fa-home"></i></button>
-            <button><i class="fa fa-anchor"></i></button>
-            <button><i class="fa fa-android"></i></button>
-            <button><i class="fa fa-angellist"></i></button>
-            <button><i class="fa fa-automobile"></i></button>
-            <button><i class="fa fa-bicycle"></i></button>
+            <button
+            @click = "theicon = icon"
+            v-for="icon in icons"
+            >
+            <i class="fa" 
+                v-bind:class="icon"
+            ></i></button>
+
         </div>
         <div class="box final">
-            <div class="circle">
-                <i class="fa fa-home big"></i>
+            <div class="circle" v-bind:style="{backgroundColor: colorVal}">
+                <i class= "fa big" v-bind:class="theicon"></i>
             </div>
         </div>
     </div>
@@ -69,7 +71,13 @@
 </div>
 <script>
     let app = Vue.createApp({
-        
+        data: function(){
+            return {
+                colorVal: "#000000",
+                icons: ["fa-home", "fa-anchor", "fa-android", "fa-angellist", "fa-automobile", "fa-bicycle"],
+                theicon: "fa-home"
+            }
+        },
     });
     app.mount("#app")
 

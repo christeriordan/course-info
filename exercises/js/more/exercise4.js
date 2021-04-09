@@ -17,9 +17,33 @@ function init(){
 
             this.style.display = "none";  // hide form
             document.querySelector("#countdown").style.display = "block";  // show countdown div
+            timer = setInterval(ontick,1000);
+            setDisplay(true)
             
     }
 
+}
+
+function ontick(){
+    timeLeft--;
+    setDisplay(false)
+    if (timeLeft === 0){
+        alert("Time is up!")
+        document.getElementById("countdown").style.display = "none"
+        document.querySelector("form[name='countdown_form']").style.display = "block"
+        clearInterval(timer)
+    }
+}
+
+function setDisplay(isInitial){
+    document.getElementById("timer").innerHTML = getSecondDisplay(timeLeft)
+    
+    let progress = document.getElementById("progressbar");
+    console.log(progress)
+    if (isInitial){
+        progress.max = timeLeft;
+    }
+    progress.value = timeLeft;
 }
 
 function getSecondDisplay(seconds){

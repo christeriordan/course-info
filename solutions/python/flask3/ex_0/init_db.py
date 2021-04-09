@@ -28,19 +28,25 @@ def insert_data(conn):
               ('tt1375666', 'Inception', 2010, 8.8, 'A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.')]
     cur = conn.cursor()
     sql = "INSERT INTO movies (imdb_id, title, year, rating, synopsis) VALUES (?, ?, ?, ?, ?)"
+    query = "SELECT * FROM movies"
     try:
         cur.executemany(sql, movies)  # data is provided as list of tuples
         conn.commit()  # commit after each row
+        cur.execute(query)
+        for i in cur:
+            print("{}".format(i))
     except sqlite3.Error as err:
         print("Error: {}".format(err))
+
     print("Rows inserted.")
     cur.close()
 
 if __name__ == "__main__":
 
     try:
-        conn = sqlite3.connect("database.db")
-    except Error as err:
+        conn = sqlite3.connect("database6.db")
+
+    except sqlite3.Error as err:
         print(err)
     else:
         create_table(conn)

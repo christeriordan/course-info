@@ -5,12 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <script>
+        
+        function changeImage(){
+            let country = document.getElementById("country");
+            let image = document.getElementById("flag");
+            image.src = country.options[country.selectedIndex].value;
+            image.alt = country.options[country.selectedIndex].text
+        }
+
+        function init(){
+            onchange = changeImage;
+        }
+        window.onload = init;
+    </script>
 </head>
 <body>
     <select name="country" id="country">
         <option value="use-images/no_image.png">Select</option>
         <option value="use-images/flag_NO.png">Norge</option>
     </select>
-    <img src="use-images/no_image.png" alt="Select">
+    <img src="use-images/no_image.png" alt="Select" id="flag">
 </body>
 </html>

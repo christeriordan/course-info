@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Exercise #6: Bank account</title>
+    <script src="exercise6.js"></script>
+    <style>
+        table{
+            text-align: left;
+            font-family: Verdana, Arial, sans-serif;
+        }
+        td{
+            padding: 0.2em;
+        }
+        .success0{
+            background-color: teal;
+        }
+        .success1{
+            background-color: thistle;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        // Code for testing the BankAccount class
+        let myAccount = new BankAccount("Christer", 1000);
+        console.log(myAccount.balance);
+        console.log(myAccount.name)
+        myAccount.deposit(500);
+        console.log(myAccount.balance);
+        myAccount.withdraw(2000);
+        console.log(myAccount.balance);
+        myAccount.withdraw(1000);
+        console.log(myAccount.balance);
+        myAccount.deposit(2000);
+        console.log(myAccount.log)
+        myAccount.printTable()
+    </script>
+</body>
+</html>

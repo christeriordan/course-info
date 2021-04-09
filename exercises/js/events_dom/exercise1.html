@@ -17,6 +17,13 @@
     </style>
     <script>
         // use onmouseover onmouseleave and innerHTML
+                
+        window.onload = function(){
+            let myDiv = document.getElementById("mydiv");
+            myDiv.onmouseover = function() {myDiv.innerHTML = "Can I help you?"}
+            myDiv.onmouseout = function() {myDiv.innerHTML = "Hello world"}
+        }
+        
     </script>
 </head>
 <body>

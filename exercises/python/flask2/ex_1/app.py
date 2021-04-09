@@ -6,7 +6,7 @@ from flask import Flask, render_template
 import math
 
 app = Flask(__name__)
-
+app.debug = True
 
 @app.route("/")
 def index():
@@ -27,7 +27,7 @@ def index():
         "is_dinner": False
     }
 
-    return render_template("booking.html", property=prop)
+    return render_template("booking.html", property=prop, booking=book)
 
 
 if __name__ == "__main__":
